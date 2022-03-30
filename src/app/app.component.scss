@@ -1,0 +1,14 @@
+@import '../styles.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $primary;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+}

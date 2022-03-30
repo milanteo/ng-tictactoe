@@ -1,0 +1,18 @@
+:host{
+    min-width: 500px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.board-table {
+    flex: 1 1 auto;
+    border-collapse: collapse;
+    border-style: hidden;
+    margin-bottom: 1rem;
+}
+
+.board-table td {
+    border: 8px solid rgb(black, 0.4);
+    text-align: center;
+}
