@@ -14,23 +14,25 @@ export class Game {
     ];
 
     this.turn = this.players[0];
+    this.outcome = [];
 
     this.board = [
-      { x: 0, y: 0, move: null },
-      { x: 1, y: 0, move: null },
-      { x: 2, y: 0, move: null },
-      { x: 0, y: 1, move: null },
-      { x: 1, y: 1, move: null },
-      { x: 2, y: 1, move: null },
-      { x: 0, y: 2, move: null },
-      { x: 1, y: 2, move: null },
-      { x: 2, y: 2, move: null }
+      { x: 0, y: 0, player: null },
+      { x: 1, y: 0, player: null },
+      { x: 2, y: 0, player: null },
+      { x: 0, y: 1, player: null },
+      { x: 1, y: 1, player: null },
+      { x: 2, y: 1, player: null },
+      { x: 0, y: 2, player: null },
+      { x: 1, y: 2, player: null },
+      { x: 2, y: 2, player: null }
     ]; 
   }
 
   turn: Player;
+  outcome: Array<Player>;
   players: Array<Player>;
-  board: Array<{ x: number, y: number, move: Player | null }>;
+  board: Array<{ x: number, y: number, player: Player | null }>;
 }
 
 @Component({

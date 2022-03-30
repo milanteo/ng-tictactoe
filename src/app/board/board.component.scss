@@ -1,8 +1,11 @@
+@import '../../styles.scss';
+
 :host{
     min-width: 500px;
     min-height: 500px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .board-table {
@@ -22,4 +25,31 @@
 
 h1 {
     text-align: center;
+}
+
+.outcome-board {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: $primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+        max-width: 200px;
+        max-height: 200px;
+        margin-bottom: 1rem;
+    }
+
+    & h1 {
+        font-weight: bold;
+        color: rgb(black, 0.4);
+    }
+}
+
+.cell-sign{
+    height: 50px;
+    width: 50px;
 }

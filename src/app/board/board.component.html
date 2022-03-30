@@ -1,7 +1,19 @@
-<h1>Is {{ game.turn.name }} turn</h1>
+<h1>{{ game.turn.name }} turn</h1>
 
 <div class="board-table" >
     <div *ngFor="let cell of game.board" (click)="playerMove(cell)" >
-        <img *ngIf="cell.move" src="assets/{{ cell.move.sign }}.png" style="height: 50px;width: 50px;;" [@fadeAnimation] >
+        <img *ngIf="cell.player" class="cell-sign" src="assets/{{ cell.player.sign }}.png" [@fadeAnimation] >
     </div>
+</div>
+
+<div *ngIf="game.outcome.length > 0" class="outcome-board" [@fadeAnimation]>
+
+    <img *ngFor="let out of game.outcome" src="assets/{{ out.sign }}.png" >
+
+    <h1 *ngIf="game.outcome.length == 1; else elseBlock" >WINNER!</h1>
+
+    <ng-template #elseBlock >
+        <h1>DRAW!</h1>
+    </ng-template>
+    
 </div>
