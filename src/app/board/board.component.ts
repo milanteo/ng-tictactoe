@@ -45,7 +45,7 @@ export class BoardComponent implements OnInit {
 
       cell.player = this.game.turn;
 
-      this.winnerCheck(cell);
+      this.outcomeCheck(cell);
 
     }else{
 
@@ -54,7 +54,7 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  winnerCheck(cell: any): void{
+  outcomeCheck(cell: any): void{
 
     if(
       // row victory check
