@@ -1,15 +1,36 @@
 import { Component } from '@angular/core';
 
+export interface Player { 
+  name: string, 
+  sign: string 
+}
+
 export class Game {
 
   constructor(){
     this.players = [
-      { name: 'Player 1', sign: 'X', turn: false },
-      { name: 'Player 1', sign: 'O', turn: true }
+      { name: 'Player 1', sign: 'X' },
+      { name: 'Player 2', sign: 'O' }
     ];
+
+    this.turn = this.players[0];
+
+    this.board = [
+      { x: 0, y: 0, move: null },
+      { x: 1, y: 0, move: null },
+      { x: 2, y: 0, move: null },
+      { x: 0, y: 1, move: null },
+      { x: 1, y: 1, move: null },
+      { x: 2, y: 1, move: null },
+      { x: 0, y: 2, move: null },
+      { x: 1, y: 2, move: null },
+      { x: 2, y: 2, move: null }
+    ]; 
   }
 
-  players: Array<{ name: string, sign: string, turn: boolean }>;
+  turn: Player;
+  players: Array<Player>;
+  board: Array<{ x: number, y: number, move: Player | null }>;
 }
 
 @Component({
@@ -20,5 +41,9 @@ export class Game {
 export class AppComponent {
   
   game: Game = new Game();
+
+  restartGame() {
+    this.game = new Game();
+  }
 
 }

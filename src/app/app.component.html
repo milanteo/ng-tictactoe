@@ -1,5 +1,7 @@
-<h1>Is player turn</h1>
-
 <app-board [game]="game" ></app-board>
 
-<button mat-flat-button class="restart-btn" >Restart the game</button>
+<button mat-flat-button 
+  class="restart-btn" 
+  (click)="restartGame()" >
+  Restart the game
+</button>
