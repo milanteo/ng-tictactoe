@@ -5,6 +5,7 @@
 <div class="board-table" >
 
     <div *ngFor="let cell of game.board" 
+        [ngStyle]="{ 'cursor': cell.player ? 'not-allowed' : 'pointer' }"
         (click)="playerMove(cell)">
 
         <img *ngIf="cell.player" class="cell-sign" src="assets/{{ cell.player.sign }}.png" [@fadeAnimation] >

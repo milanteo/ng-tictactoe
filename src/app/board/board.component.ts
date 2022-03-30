@@ -49,7 +49,7 @@ export class BoardComponent implements OnInit {
 
     }else{
 
-      this.snack.open("Don't touch this!");
+      this.snack.open("Not allowed!", undefined, { duration: 1000 });
 
     }
   }
@@ -76,13 +76,12 @@ export class BoardComponent implements OnInit {
     // draw outcome check
     }else if(this.game.board.filter(bCell => !bCell.player).length == 0){
       
-      this.game.outcome = this.game.players;
+      this.game.outcome = this.game.players.slice();
 
     // next turn
     }else{
       this.game.turn = this.game.players.find(player => player.sign != this.game.turn.sign)!;
     }
-
 
   }
 
