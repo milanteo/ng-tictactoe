@@ -1,7 +1,6 @@
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use 'sass:map';
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
@@ -58,10 +57,6 @@ $ng-tictactoe-theme: mat.define-dark-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($ng-tictactoe-theme);
-
-$primary: mat.get-color-from-palette($ng-tictactoe-primary, 500);
-$accent:  mat.get-color-from-palette($ng-tictactoe-accent, 500);
-$warn:    mat.get-color-from-palette($ng-tictactoe-warn, 500);
 
 /* You can add global styles to this file, and also import other style files */
 
